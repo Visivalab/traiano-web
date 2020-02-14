@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap');
+html,body{
+	margin: 0;
+	height: 100%;
+	font-family: 'Montserrat', sans-serif;
+}
+h1,h2,h3,h4,h5,p,a,li{margin:0}
+.barra_top{
+	position: fixed;
+	width: 100%;
+	background-color: #dfe6e9;
+	height: 50px;
+	align-items: center;
+    padding: 10px 20px;
+	box-sizing: border-box;
+	
+	font-size: 16pt;
+}
+.menu{
+	position: fixed;
+	top: 50px;
+	width: 250px;
+    height: calc(100% - 50px);
+	background-color: #2d3436;
+	color: white;
+	padding: 20px;
+	box-sizing: border-box;
+	float:left;
+}
+.menu h3{
+	margin: 20px 0;
+}
+.menu li{
+	list-style: none;
+	margin: 20px 0;
+	display: flex;
+
+}
+.menu li i{
+	width: 30px;
+	line-height: 30px;
+}
+.menu li a {
+	color: white;
+	font-size: 12pt;
+	line-height: 30px;
+}
+.form {
+	margin: 5%;
+	margin-left: 300px;
+	width: 80%;
+	float: left;
+}
+
+
+/* Roba scaricata da qua https://codepen.io/felipeumanzor/pen/BZjXPq */
+.form-container{
+	padding:10px;
+	padding-bottom:25px;
+	margin:0 auto;
+	margin-top:20px;
+	width:80%;
+	border-radius:20px;
+	background-color: #dfe6e9;
+  }
+  
+  .add-one{
+	color:green;
+	text-align:center;
+	font-weight:bolder;
+	cursor:pointer;
+	margin-top:10px;
+  }
+  
+  .delete{
+	color:white;
+	background-color:rgb(231, 76, 60);
+	text-align:center;
+	margin-top:6px;
+	font-weight:700;
+	border-radius:5px;
+	min-width:20px;
+	cursor:pointer;
+  }
+  
+  #singlebutton{
+	width:100%;
+	margin-top:20px;
+  }
+  
+  .title{
+	text-align:center;
+	font-size:40px;
+	margin-bottom:40px;
+  }
+  
+  .dynamic-element{
+	margin-bottom:0px;
+  }

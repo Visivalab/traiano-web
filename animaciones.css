@@ -1,0 +1,58 @@
+.elemento_0{ top: 50%; left: 50%; }
+.elemento_1{ top: 80%; left: 20%; }
+.elemento_2{ top: 0%; left: 45%; }
+.elemento_3{ top: 100%; left: 100%;}
+.elemento_4{ top: 0%; left: 0%; }
+.elemento_5{ top: 0%; left: 80%; }
+
+.expositorio_logo{ top: 50%; left: 80%; }
+
+.elemento,.expositorio_logo{
+	transform: translate(-50%,-50%);
+	-webkit-animation-name: 'flotar1_absolutPos';
+	-webkit-animation-duration: 5s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-timing-function: ease-in-out;
+	-webkit-animation-delay: 0;
+
+	animation-name: 'flotar1_absolutPos';
+	animation-duration: 5s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+	animation-delay: 0;
+
+	transition: 1s;
+}
+
+@keyframes flotar1_absolutPos{
+	from{ margin-top:0; }
+	50%{ margin-top:-1%; }
+	to{ margin-top:0; }
+}
+/*
+@keyframes flotar1{
+	from{ transform: translate(-50%,-50%) }
+	50%{ transform: translate(-50%,-55%) }
+	to{ transform: translate(-50%,-50%) }
+}
+@keyframes flotar2{
+	from{ transform: translate(-50%,-50%) }
+	25%{ transform: translate(-45%,-45%) }
+	50%{ transform: translate(-50%,-40%) }
+	75%{ transform: translate(-55%,-45%) }
+	to{ transform: translate(-50%,-50%) }
+}
+@keyframes flotar3{
+	from{ transform: translate(-50%,-50%) }
+	10%{ transform: translate(-54%,-52%)  }
+	20%{ transform: translate(-52%,-52%) }
+	30%{ transform: translate(-51%,-53%) }
+	40%{ transform: translate(-49%,-51%) }
+	50%{ transform: translate(-47%,-52%) }
+	60%{ transform: translate(-50%,-48%) }
+	70%{ transform: translate(-52%,-52%) }
+	80%{ transform: translate(-48%,-49%) }
+	90%{ transform: translate(-53%,-51%) }
+	to{ transform: translate(-50%,-50%) }
+}
+*/
