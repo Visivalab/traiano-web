@@ -15,7 +15,6 @@ $array_consultas = array(
 $consulta_noticias = "SELECT * FROM noticias ORDER BY fecha_noticia DESC LIMIT 1";
 
 
-
 foreach ($array_consultas as $key => $consulta) {
 	$elementos = $conn -> prepare($consulta);
 	$elementos -> execute();
@@ -33,6 +32,7 @@ foreach ($array_consultas as $key => $consulta) {
 	}
 }
 
+
 $noticias = $conn -> prepare($consulta_noticias);
 $noticias -> execute();
 $resultado_noticias = $noticias->fetchAll(PDO::FETCH_ASSOC);
@@ -44,6 +44,4 @@ foreach ($resultado_noticias as $fila) {
 		'tipo_elemento' => 'noticia'
 	);
 }
-
-
 echo json_encode($array_all_elementos);

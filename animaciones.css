@@ -29,30 +29,3 @@
 	50%{ margin-top:-1%; }
 	to{ margin-top:0; }
 }
-/*
-@keyframes flotar1{
-	from{ transform: translate(-50%,-50%) }
-	50%{ transform: translate(-50%,-55%) }
-	to{ transform: translate(-50%,-50%) }
-}
-@keyframes flotar2{
-	from{ transform: translate(-50%,-50%) }
-	25%{ transform: translate(-45%,-45%) }
-	50%{ transform: translate(-50%,-40%) }
-	75%{ transform: translate(-55%,-45%) }
-	to{ transform: translate(-50%,-50%) }
-}
-@keyframes flotar3{
-	from{ transform: translate(-50%,-50%) }
-	10%{ transform: translate(-54%,-52%)  }
-	20%{ transform: translate(-52%,-52%) }
-	30%{ transform: translate(-51%,-53%) }
-	40%{ transform: translate(-49%,-51%) }
-	50%{ transform: translate(-47%,-52%) }
-	60%{ transform: translate(-50%,-48%) }
-	70%{ transform: translate(-52%,-52%) }
-	80%{ transform: translate(-48%,-49%) }
-	90%{ transform: translate(-53%,-51%) }
-	to{ transform: translate(-50%,-50%) }
-}
-*/
