@@ -27,15 +27,7 @@ $(document).ready(function(){
     	}
     });
     function cargarElementosPortada(elementosPortada){
-        /*Ordenar los elementos por capas->Video / video, evento, twitter, instagram / video, twitter, instagram, audio, audio*/
-        /* La idea era que en la primera capa hay 1 video, en la segunda dos twitters y en la tercera 2 instagrams. Pero creo que no lo pensé muy bien.. */
-        /* Deberia pasar de esto y que se mostraran tal como vienen, así el primero es el que yo pase primero */
-        let c_video = 1;
-        let c_twitter = 2;
-        let c_instagram = 2;
         let clase_capa = '';
-
-        console.log(elementosPortada);
 
     	$.each(elementosPortada,function(key,val){
     		if(elementosPortada[key].tipo_elemento == 'noticia'){
