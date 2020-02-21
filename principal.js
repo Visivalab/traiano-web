@@ -28,22 +28,27 @@ $(document).ready(function(){
     });
     function cargarElementosPortada(elementosPortada){
         /*Ordenar los elementos por capas->Video / video, evento, twitter, instagram / video, twitter, instagram, audio, audio*/
+        /* La idea era que en la primera capa hay 1 video, en la segunda dos twitters y en la tercera 2 instagrams. Pero creo que no lo pensé muy bien.. */
+        /* Deberia pasar de esto y que se mostraran tal como vienen, así el primero es el que yo pase primero */
         let c_video = 1;
         let c_twitter = 2;
         let c_instagram = 2;
         let clase_capa = '';
 
+        console.log(elementosPortada);
+
     	$.each(elementosPortada,function(key,val){
-    		if(elementosPortada[key].tipo_elemento == 'video'){
-                if( c_video==1 ){
-                    clase_capa = "elemento_capa1";
-                    c_video++;
-                }else if( c_video==2 ){
-                    clase_capa = "elemento_capa2";
-                    c_video++;
-                }else{
-                    clase_capa = "elemento_capa3";
-                }
+    		if(elementosPortada[key].tipo_elemento == 'noticia'){
+                $('.elementos_expositorio').append(
+    				"<a href='single_noticia.php?noticia="+elementosPortada[key].id_elemento+"' id='elemento_"+key+"' data-id_real='"+elementosPortada[key].id_elemento+"' data-posicion='elemento_"+key+"' class='elemento elemento_"+key+" "+clase_capa+" elemento_video elemento_size_video' style='background-image: url(elements/noticias/"+elementosPortada[key].recurso_elemento+")'>" +
+                    "<div class='background_gradient'></div>" +
+                        "<div class='informacion_elemento'>" +
+                            "<div class='texto_elemento'>" +
+                				"<h1>"+elementosPortada[key].nombre_elemento+"</h1>" +
+                            "</div>" +
+                        "</div>" +
+                    "</div>");
+            }else if(elementosPortada[key].tipo_elemento == 'video'){
     			$('.elementos_expositorio').append(
     				"<div id='elemento_"+key+"' data-id_real='"+elementosPortada[key].id_elemento+"' data-posicion='elemento_"+key+"' class='elemento elemento_"+key+" "+clase_capa+" elemento_video elemento_size_video' style='background-image: url(elements/videos/"+elementosPortada[key].recurso_elemento+".png)'>" +
                     "<div class='play_button'><div class='triangle'></div></div>" +
@@ -64,7 +69,29 @@ $(document).ready(function(){
                         "Your browser does not support the video tag." +
                     "</video>"
                 );
-            }/*else if(elementosPortada[key].tipo_elemento == 'instagram'){
+            }else if(elementosPortada[key].tipo_elemento == 'audio'){
+    			$('.elementos_expositorio').append(
+    				"<div id='elemento_"+key+"' data-id_real='"+elementosPortada[key].id_elemento+"' data-posicion='elemento_"+key+"' class='elemento elemento_"+key+" elemento_capa3 elemento_audio elemento_size_rectangle'>" +
+                        "<div class='background_gradient'></div>" +
+                        "<div class='info_audio'>" +
+                            "<img src='assets/icons/audio.svg' width='35px'>" +
+                            "<div class='informacion_elemento'>" +
+                                "<h1>"+elementosPortada[key].nombre_elemento+"</h1>" +
+                                "<p class='autor'>"+elementosPortada[key].autor_elemento+"</p>" +
+                                "<p class='subtitulo'>"+elementosPortada[key].subtitulo_elemento+"</p>" +
+                                "<img class='grafico_audio' src='assets/icons/grafico_audio.svg'>" +
+                            "</div>" +
+                        "</div>" +
+                    "</div>");
+                $('.fondo_negro_fullscreen').append(
+                    "<audio class='audio_portada' id='"+elementosPortada[key].id_elemento+"' controls>" +
+                        "<source src='elements/audios/"+elementosPortada[key].recurso_elemento+".mp3' type='video/mp3'>" +
+                        "<source src='elements/audios/"+elementosPortada[key].recurso_elemento+".mp3' type='video/ogg'>" + 
+                        "Your browser does not support the audio tag." +
+                    "</audio>"
+                );
+            }
+            /*else if(elementosPortada[key].tipo_elemento == 'instagram'){
                 if( c_instagram==2 ){
                     clase_capa = "elemento_capa2";
                     c_instagram++;
@@ -99,28 +126,7 @@ $(document).ready(function(){
                             "<p class='texto'>"+elementosPortada[key].texto_elemento+"</p>" +
                         "</div>" +
     				"</div>");
-    		}*/else if(elementosPortada[key].tipo_elemento == 'audio'){
-    			$('.elementos_expositorio').append(
-    				"<div id='elemento_"+key+"' data-id_real='"+elementosPortada[key].id_elemento+"' data-posicion='elemento_"+key+"' class='elemento elemento_"+key+" elemento_capa3 elemento_audio elemento_size_rectangle'>" +
-                        "<div class='background_gradient'></div>" +
-                        "<div class='info_audio'>" +
-                            "<img src='assets/icons/audio.svg' width='35px'>" +
-                            "<div class='informacion_elemento'>" +
-                                "<h1>"+elementosPortada[key].nombre_elemento+"</h1>" +
-                                "<p class='autor'>"+elementosPortada[key].autor_elemento+"</p>" +
-                                "<p class='subtitulo'>"+elementosPortada[key].subtitulo_elemento+"</p>" +
-                                "<img class='grafico_audio' src='assets/icons/grafico_audio.svg'>" +
-                            "</div>" +
-                        "</div>" +
-                    "</div>");
-                $('.fondo_negro_fullscreen').append(
-                    "<audio class='audio_portada' id='"+elementosPortada[key].id_elemento+"' controls>" +
-                        "<source src='elements/audios/"+elementosPortada[key].recurso_elemento+".mp3' type='video/mp3'>" +
-                        "<source src='elements/audios/"+elementosPortada[key].recurso_elemento+".mp3' type='video/ogg'>" + 
-                        "Your browser does not support the audio tag." +
-                    "</audio>"
-                );
-            }/*else if(elementosPortada[key].tipo_elemento == 'evento'){
+    		}*//*else if(elementosPortada[key].tipo_elemento == 'evento'){
     			$('.elementos_expositorio').append(
     				"<div id='elemento_"+key+"' data-id_real='"+elementosPortada[key].id_elemento+"' data-posicion='elemento_"+key+"' class='elemento elemento_"+key+" elemento_capa2 elemento_evento elemento_size_rectangle'>" +
         				"<div class='informacion_elemento'>" +
@@ -130,17 +136,7 @@ $(document).ready(function(){
                             "<p class='texto'>"+elementosPortada[key].texto_elemento+"</p>" +
                         "</div>" +
     				"</div>");
-            }*/else if(elementosPortada[key].tipo_elemento == 'noticia'){
-                $('.elementos_expositorio').append(
-    				"<a href='single_noticia.php?noticia="+elementosPortada[key].id_elemento+"' id='elemento_"+key+"' data-id_real='"+elementosPortada[key].id_elemento+"' data-posicion='elemento_"+key+"' class='elemento elemento_"+key+" "+clase_capa+" elemento_video elemento_size_video' style='background-image: url(elements/noticias/"+elementosPortada[key].recurso_elemento+")'>" +
-                    "<div class='background_gradient'></div>" +
-                        "<div class='informacion_elemento'>" +
-                            "<div class='texto_elemento'>" +
-                				"<h1>"+elementosPortada[key].nombre_elemento+"</h1>" +
-                            "</div>" +
-                        "</div>" +
-                    "</div>");
-            }
+            }*/
     	});
     }
     

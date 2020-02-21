@@ -12,8 +12,19 @@ $array_consultas = array(
 	//'consulta_instagram' => "SELECT id_elemento,nombre_elemento,autor_elemento,subtitulo_elemento,link_elemento,recurso_elemento FROM elementos WHERE tipo_elemento == 'instagram' ORDER BY fecha_elemento DESC LIMIT 2",
 	//'consulta_twitter' => "SELECT id_elemento,nombre_elemento,autor_elemento,subtitulo_elemento,link_elemento,recurso_elemento FROM elementos WHERE tipo_elemento == 'twitter' ORDER BY fecha_elemento DESC LIMIT 2",
 );
-$consulta_noticias = "SELECT * FROM noticias ORDER BY fecha_noticia DESC LIMIT 1";
+$consulta_noticias = "SELECT * FROM noticias WHERE destacada=1 ORDER BY fecha_noticia DESC LIMIT 1";
 
+$noticias = $conn -> prepare($consulta_noticias);
+$noticias -> execute();
+$resultado_noticias = $noticias->fetchAll(PDO::FETCH_ASSOC);
+foreach ($resultado_noticias as $fila) {
+	$array_all_elementos[]= array(
+		'id_elemento' => $fila['id_noticia'],
+		'nombre_elemento' => $fila['titulo_noticia'],
+		'recurso_elemento' => $fila['foto_noticia'],
+		'tipo_elemento' => 'noticia'
+	);
+}
 
 foreach ($array_consultas as $key => $consulta) {
 	$elementos = $conn -> prepare($consulta);
@@ -32,16 +43,4 @@ foreach ($array_consultas as $key => $consulta) {
 	}
 }
 
-
-$noticias = $conn -> prepare($consulta_noticias);
-$noticias -> execute();
-$resultado_noticias = $noticias->fetchAll(PDO::FETCH_ASSOC);
-foreach ($resultado_noticias as $fila) {
-	$array_all_elementos[]= array(
-		'id_elemento' => $fila['id_noticia'],
-		'nombre_elemento' => $fila['titulo_noticia'],
-		'recurso_elemento' => $fila['foto_noticia'],
-		'tipo_elemento' => 'noticia'
-	);
-}
 echo json_encode($array_all_elementos);
