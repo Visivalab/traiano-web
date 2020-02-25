@@ -29,8 +29,8 @@ include_once "templates/head.php"
                             <div class='background_gradient'></div>
                             <div class='informacion_elemento'>
                                 <div class='texto_elemento'>
-                                    <h1><?=$fila['titulo_grupo']?></h1>
-                                    <p class='autor'><?=$fila['autor_grupo']?></p>
+                                    <h3><?=$fila['autor_grupo']?></h3>
+                                    <p class='autor'><?=$fila['titulo_grupo']?></p>
                                 </div>
                             </div>
                         </a>
@@ -41,7 +41,8 @@ include_once "templates/head.php"
                             <a href='single_galeria.php?id=<?=$fila['id_elemento']?>' class='elemento_showcase elemento_creazioni elemento_size_video' data-id_elemento='<?=$fila['id_elemento']?>' style='background-image: url(elements/galerias/<?=$fila['recurso_elemento']?>)'>
                                 <div class='background_gradient'></div>
                                 <div class='informacion_elemento'>
-                                    <h1><?=$fila['nombre_elemento']?></h1>
+                                    <h3><?=$fila['autor_elemento']?></h3>
+                                    <p class='autor'><?=$fila['nombre_elemento']?></p>
                                 </div>
                             </a>
                     <?php   
@@ -50,7 +51,8 @@ include_once "templates/head.php"
                             <a href='single_post.php?id=<?=$fila['id_elemento']?>' class='elemento_showcase elemento_creazioni elemento_size_video' data-id_elemento='<?=$fila['id_elemento']?>' style='background-image: url(elements/<?=$fila['recurso_elemento']?>)'>
                                 <div class='background_gradient'></div>
                                 <div class='informacion_elemento'>
-                                    <h1><?=$fila['nombre_elemento']?></h1>
+                                    <h3><?=$fila['autor_elemento']?></h3>
+                                    <p class='autor'><?=$fila['nombre_elemento']?></p>
                                 </div>
                             </a>
                         <?php
