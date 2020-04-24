@@ -24,13 +24,36 @@ $miniatura -> bindParam(':id',$id);
 $miniatura -> execute();
 $miniaturas = $miniatura->fetchAll(PDO::FETCH_ASSOC);
 
+//Esto ahora solo esta pensado para meter videos encima de galerias
+//Aquí busca el id actual (en este caso la galeria), y agarra el id y la posicion del elemento_2, que luego usaremos para pintarlo en la posición que sea
+$elemento_extra = $conn->prepare("SELECT id_elemento_1,id_elemento_2,posicion_elemento_2,id_elemento,nombre_elemento,recurso_elemento 
+FROM link_elemento_extra 
+LEFT JOIN elementos 
+ON link_elemento_extra.id_elemento_2 = elementos.id_elemento WHERE link_elemento_extra.id_elemento_1 = :id");
+
+$elemento_extra -> bindParam(':id',$id);
+$elemento_extra -> execute();
+$elementos_extra = $elemento_extra->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <body class="fondo_negro">
 	<?php include_once "templates/menu.php" ?>
 	<div class="center_1000 content_showcase">
 
 		<section id="seccion_single" class="seccion mostrar">
+			
 			<div class="single_elemento_vista">
+				<?php
+					foreach($elementos_extra as $key=>$elemento){
+				?>
+					<div class="elemento_extra elemento_extra--top">
+						<video id="video_<?=$key?>" width="100%" height="auto" controls="" controlslist="nodownload">
+							<source src="elements/videos/<?=$elemento[recurso_elemento]?>.mp4" type="video/mp4">
+						</video>
+					</div>
+				<?php
+					}
+				?>
+
 				<img class="imagen_creaciones" src="elements/galerias/<?=$miniaturas[0]["ruta_imagen"]?>" width="100%" height="auto">
 				<div class="miniaturas_galeria">
 					<?php

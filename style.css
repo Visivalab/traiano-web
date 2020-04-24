@@ -671,6 +671,9 @@ a.link_separado{
 .single_elemento_vista audio{
 	width: 100%;
 }
+.elemento_extra--top{
+	margin-bottom: 40px;
+}
 .imagen_creaciones{
 	width: auto;
     max-height: 400px;
