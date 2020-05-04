@@ -46,7 +46,7 @@ $elementos_extra = $elemento_extra->fetchAll(PDO::FETCH_ASSOC);
 					foreach($elementos_extra as $key=>$elemento){
 				?>
 					<div class="elemento_extra elemento_extra--top">
-						<video id="video_<?=$key?>" width="100%" height="auto" controls="" controlslist="nodownload">
+						<video id="video_<?=$key?>" width="100%" height="auto" controls="" controlslist="nodownload" poster="elements/videos/<?=$elemento[recurso_elemento]?>.jpg">
 							<source src="elements/videos/<?=$elemento[recurso_elemento]?>.mp4" type="video/mp4">
 						</video>
 					</div>
