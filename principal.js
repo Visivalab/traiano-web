@@ -32,7 +32,7 @@ $(document).ready(function(){
     	$.each(elementosPortada,function(key,val){
     		if(elementosPortada[key].tipo_elemento == 'noticia'){
                 $('.elementos_expositorio').append(
-    				"<a href='single_noticia.php?noticia="+elementosPortada[key].id_elemento+"' id='elemento_"+key+"' data-id_real='"+elementosPortada[key].id_elemento+"' data-posicion='elemento_"+key+"' class='elemento elemento_"+key+" "+clase_capa+" elemento_video elemento_size_video' style='background-image: url(elements/noticias/"+elementosPortada[key].recurso_elemento+")'>" +
+    				`<a href='single_noticia.php?noticia=${elementosPortada[key].id_elemento}' id='elemento_${key}' data-id_real='${elementosPortada[key].id_elemento}' data-posicion='elemento_${key}' class='elemento elemento_${key} ${clase_capa} elemento_video elemento_size_video' style='background-image: url("elements/noticias/${elementosPortada[key].recurso_elemento}")'>` +
                     "<div class='background_gradient'></div>" +
                         "<div class='informacion_elemento'>" +
                             "<div class='texto_elemento'>" +
