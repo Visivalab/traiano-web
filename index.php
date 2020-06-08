@@ -128,7 +128,7 @@ include_once "templates/head.php";
                 <a class="ir_contenido" href="narrazioni.php">Vedi tutto</a>
             </div>
             <div class="showcase_atelier">
-                <a href="atelier.php" class="showcase_titulo">Atelier d'artisti</a>
+                <a href="atelier.php" class="showcase_titulo">Atelier</a>
                 <div id="content_atelier" class="showcase_content content_atelier">
                     <div class="pag prev_pag" data-seccion="atelier" data-tag="none"></div>
                     <div class="content_elements_fix">
