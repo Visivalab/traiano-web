@@ -6,7 +6,7 @@ include_once "templates/head.php"
 	<?php include_once "templates/menu.php" ?>
 	<div class="center_1000 content_showcase">
 		<h1 class="titulo_interno">ATELIER D'ARTISTA</h1>
-		<p>Questa sezione ospita i lavori degli artisti coinvolti nel progetto Live Museum, Live Change. Le opere prevedono il coinvolgimento artisti che utilizzano diverse forme espressive, dalla musica, alla drammaturgia, ma anche fotografia, performance e opere site specific. Interventi che promuovono il coinvolgimento delle comunità nei vari atelier con l’obiettivo di rendere il museo un luogo di relazione, di possibilità di fare esperienze, di sperimentazione artistica in costante dialogo e trasformazione.</p>
+		<p>Questa sezione ospita i lavori degli artisti, drammaturghi e designer coinvolti nel progetto Live Museum, Live Change. I creativi utilizzano diverse forme espressive, dalla musica, alla drammaturgia, ma anche fotografia, performance e opere site specific. Interventi che promuovono il coinvolgimento delle comunità nei vari atelier con l'obiettivo di rendere il museo un luogo di relazione, di possibilità di fare esperienze, di sperimentazione artistica in costante dialogo e trasformazione.</p>
 		<div id="content_atelier" class="showcase_content content_atelier content_showcase_interno">
 
         <?php
