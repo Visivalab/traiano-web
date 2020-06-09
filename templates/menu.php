@@ -18,7 +18,7 @@
 	<div class="close_menu"></div>
 	<a href="chi_siamo.php">chi siamo</a>
 	<a href="narrazioni.php">narrazioni</a>
-	<a href="atelier.php">atelier d'artista</a>
+	<a href="atelier.php">atelier</a>
 	<a href="news.php">news</a>
 	<!--<a href="creazioni.php">creazioni</a>
 	<a href="calendario.php">calendario</a>
