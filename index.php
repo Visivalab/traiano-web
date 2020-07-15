@@ -77,7 +77,10 @@ include_once "templates/head.php";
                             <p class="texto"><?=substr($resultado_portada['texto_noticia'],0,250).'...'?></p>
                         </div>
                     </div>
-                    <a href="single_noticia.php?noticia=<?=$resultado_portada['id_noticia']?>" class="boton">Vedi notizie</a>
+                    <div class="botonCont--list">
+                        <a href="single_noticia.php?noticia=<?=$resultado_portada['id_noticia']?>" class="boton">Leggi la notizia</a>
+                        <a href="news.php" class="boton">Vedi altre notizie</a>
+                    </div>
                 </div>
             </div>
         </div>

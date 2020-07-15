@@ -483,7 +483,13 @@ a.link_separado{
 	font-weight: 600;
 	cursor: pointer;
 	margin-top: 10px;
+	margin-right: 10px;
 	text-transform: unset;
+}
+.botonCont--list{
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
 }
 /*
 .cont_fecha{

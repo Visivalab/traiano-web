@@ -4,7 +4,7 @@ require_once "llamadas/conexion.php";
 
 $id_grupo = $_GET['group'];
 
-$grupo = $conn->prepare("SELECT id_grupo,titulo_grupo,descripcion_grupo,autor_grupo FROM grupos WHERE id_grupo = :id_grupo");
+$grupo = $conn->prepare("SELECT id_grupo,titulo_grupo,descripcion_grupo,autor_grupo,coverImage_grupo FROM grupos WHERE id_grupo = :id_grupo");
 $grupo -> bindParam(':id_grupo',$id_grupo);
 $grupo -> execute();
 $resultado_grupo = $grupo->fetchAll(PDO::FETCH_ASSOC);
@@ -18,9 +18,18 @@ $resultado_elementos = $elemento->fetchAll(PDO::FETCH_ASSOC);
 <body class="fondo_negro">
 	<?php include_once "templates/menu.php" ?>
 	<div class="center_1000 content_showcase">
-
 		<section id="seccion_single" class="seccion mostrar">
 			<div class="single_elemento_vista">
+                <?php
+                if($resultado_grupo[0]['coverImage_grupo']){
+                ?>
+                <div class="elemento_extra elemento_extra--top">
+                    <img width="100%" src="elements/<?=$resultado_grupo[0]['coverImage_grupo']?>">
+                </div>
+                <?php
+                }
+                ?>
+
 			<?php
             foreach ($resultado_elementos as $fila_el) {
                 $id_elemento = $fila_el['id_elemento'];
