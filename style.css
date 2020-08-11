@@ -744,9 +744,9 @@ a.link_separado{
     line-height: 32px;
     margin-top: 30px;
 }
-.single_video:after{
+/*.single_video:after{
 	background-image: url(elements/icons/camera.svg);
-}
+}*/
 .single_elemento_info:after{
 	content: "";
     position: absolute;
