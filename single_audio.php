@@ -33,8 +33,10 @@ foreach ($resultado as $fila) {
 			<div class="single_elemento_info single_video">
 				<div class="info_important">
 					<h1><?=$nombre_elemento?></h1>
-					<p class="autor"><?=$autor_elemento?></p>
-					<span class="tag" data-tag="liceo dante"><?=$tags_elemento?></span>
+                    <p class="autor"><?=$autor_elemento?></p>
+                    <?php if($tags_elemento != ''){ ?>
+                        <span class='tag' data-tag='liceo dante'><?=$tags_elemento?></span>
+                    <?php } ?>
 				</div>
 				<p class="texto"><?=$texto_elemento?></p>
 			</div>

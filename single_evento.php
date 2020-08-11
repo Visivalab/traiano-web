@@ -19,7 +19,9 @@ $id = $_GET['id'];
 				<div class="info_important">
 					<h1>LA MAGIA DEI MERCATI</h1>
 					<p class="autor">Martina Valenti</p>
-					<span class="tag" data-tag="liceo dante">liceo dante</span>
+					<?php if($tags_elemento != ''){ ?>
+                        <span class='tag' data-tag='liceo dante'><?=$tags_elemento?></span>
+                    <?php } ?>
 				</div>
 				<p class="texto"></p>
 			</div>
