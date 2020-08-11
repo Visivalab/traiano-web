@@ -712,6 +712,9 @@ a.link_separado{
 	color:white;
 	text-decoration: underline;
 }
+.single_elemento_info h3{
+    text-transform: none;
+}
 .info_important{
     width: 100%;
     float: left;
